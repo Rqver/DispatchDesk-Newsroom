@@ -1,0 +1,11 @@
+{
+  "tasks": {
+    "dev": "deno run --watch --env-file --unstable-cron --allow-env --allow-sys --allow-read --allow-net main.ts",
+    "start": "deno run --env-file --unstable-cron --allow-env --allow-sys --allow-read --allow-net main.ts"
+  },
+  "imports": {
+    "@std/assert": "jsr:@std/assert@1",
+    "puppeteer": "npm:rebrowser-puppeteer@^24.8.1"
+  },
+  "nodeModulesDir": "auto"
+}
