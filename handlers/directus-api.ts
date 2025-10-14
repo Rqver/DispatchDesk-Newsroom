@@ -123,6 +123,7 @@ export async function publishStory(story: Story) {
         body: marked(story.content),
         ai_written: "true",
         original_source: story.link,
+        source_name: story.agency,
         header_media: headerMediaId
     })
 

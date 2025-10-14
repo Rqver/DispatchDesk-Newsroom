@@ -114,6 +114,7 @@ async function generateStory(agency: string, type: string, content: string, cate
             categories: categories,
             reviewChannel: reviewChannel ? reviewChannel : false,
             link: link,
+            agency: agency,
             media: media ? media : undefined,
         }
 

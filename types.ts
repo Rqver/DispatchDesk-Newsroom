@@ -7,6 +7,7 @@ export interface Story {
     media?: ReleaseMedia[];
     reviewChannel?: boolean;
     link?: string;
+    agency?: string;
 }
 
 export interface Category {
