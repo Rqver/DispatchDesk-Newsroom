@@ -96,10 +96,10 @@ async function getMediaReleases(): Promise<FmaMediaRelease[]> {
     const $ = load(html);
     const releases: FmaMediaRelease[] = [];
 
-    $("article.results-list__result").each((_, element) => {
-        const article = $(element);
-        const titleEl = article.find("h3.results-list__result-title a");
-        const descriptionEl = article.find("div.result--meta-description");
+    $("li.search-results-semantic__result-item").each((_, element) => {
+        const item = $(element);
+        const titleEl = item.find("h3 a");
+        const descriptionEl = item.find("section p");
 
         const title = titleEl.text().trim();
         const relativeUrl = titleEl.attr("href");
@@ -121,7 +121,11 @@ async function checkForNewFmaReleases(): Promise<TaskResult> {
     try {
         releases = await getMediaReleases();
     } catch (error) {
-        return { success: false, errorMessage: (error as Error).message };
+        return { success: false, errorMessage: (error as Error).message }
+    }
+
+    if (releases.length === 0){
+        return { success: false, errorMessage: "0 Releases found" }
     }
 
     for (const release of releases.reverse()) {
