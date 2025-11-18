@@ -2,6 +2,7 @@ import puppeteer from "npm:puppeteer-extra";
 import type { Browser } from "npm:puppeteer";
 import StealthPlugin from "npm:puppeteer-extra-plugin-stealth";
 import { sendWebhook } from "./webhook.ts";
+import {config} from "../config.ts";
 
 const POOL_SIZE = 2;
 const MAX_BROWSER_USES = 100;
@@ -33,7 +34,7 @@ class BrowserPoolManager {
 
     private log(message: string){
         if (this.devMode) return;
-        sendWebhook({ content: message}, "https://discord.com/api/webhooks/1405778995882102854/bKxOwPMsiNYjgnIYM95m4RsZTydz7fGmRn2YgFHJW_79veUfbH6UQyWw7hFBrLKP3Ryb");
+        sendWebhook({ content: message}, config.webhooks.browserPool);
     }
 
     private async _launchNewBrowser(): Promise<PoolBrowser> {

@@ -17,7 +17,7 @@ const isNitterEnabled = areAllVarsPresent(nitterKeys);
 const mapBoxKeys = ['MAPBOX_ACCESS_TOKEN'];
 const isMapBoxEnabled = areAllVarsPresent(mapBoxKeys);
 
-const webhooksKeys = ['PUBLISHING_SUCCESS_WEBHOOK', 'PUBLISHING_FAILURE_WEBHOOK', 'PUBLISHING_DRAFT_SUCCESS_WEBHOOK', 'TASK_FAILURE_WEBHOOK'];
+const webhooksKeys = ['PUBLISHING_SUCCESS_WEBHOOK', 'PUBLISHING_FAILURE_WEBHOOK', 'PUBLISHING_DRAFT_SUCCESS_WEBHOOK', 'TASK_FAILURE_WEBHOOK', 'BROWSER_POOL_WEBHOOK', 'REJECTED_STORY_WEBHOOK'];
 const isWebhooksEnabled = areAllVarsPresent(webhooksKeys);
 
 export const config = {
@@ -57,6 +57,8 @@ export const config = {
         publishingSuccess: Deno.env.get('PUBLISHING_SUCCESS_WEBHOOK'),
         publishingFailure: Deno.env.get('PUBLISHING_FAILURE_WEBHOOK'),
         publishingDraftSuccess: Deno.env.get('PUBLISHING_DRAFT_SUCCESS_WEBHOOK'),
-        taskFailure: Deno.env.get('TASK_FAILURE_WEBHOOK')
+        taskFailure: Deno.env.get('TASK_FAILURE_WEBHOOK'),
+        browserPool: Deno.env.get('BROWSER_POOL_WEBHOOK'),
+        rejectedStory: Deno.env.get('REJECTED_STORY_WEBHOOK')
     }
 };

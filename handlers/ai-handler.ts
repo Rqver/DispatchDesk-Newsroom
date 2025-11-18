@@ -52,7 +52,7 @@ export async function reviewRelease(agency: string, type: string, content: strin
 
     const output = reviewResponse.output_text;
     if (output.trim().toUpperCase().includes("--NO--")) {
-        sendWebhook({content: link + "\n" + content}, "https://discord.com/api/webhooks/1411640407250571284/--oBUQn5gM0B3rY47Dbq5T1Q0cdIxrVdsuJcrOgRpFyWZvCzoi_U0UUc2Y9aV354gswS")
+        sendWebhook({content: link + "\n" + content}, config.webhooks.browserPool)
         return;
     }
 
