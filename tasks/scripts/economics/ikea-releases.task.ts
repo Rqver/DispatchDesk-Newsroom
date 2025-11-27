@@ -2,6 +2,9 @@ import { load } from "npm:cheerio";
 import { fetchWithBrowserHeaders, fetchWithHeadlessBrowser } from "../../../util/web.ts";
 import type { Task, TaskResult, ReleaseMedia } from "../../../types.ts";
 import { reviewRelease } from "../../../handlers/ai-handler.ts";
+import { validateDate } from "../../../util/time.ts";
+import { sendWebhook } from "../../../util/webhook.ts";
+import { config } from "../../../config.ts";
 
 const newsUrl = "https://www.ikea.com/nz/en/newsroom/";
 
@@ -29,6 +32,11 @@ async function fetchInformationFromRelease(link: string): Promise<void> {
     }
 
     const $ = load(html);
+
+    const dateText = $('div[data-pub-type="article-hero"] a').first().closest('span').next('span').text().trim();
+    if (!dateText || !validateDate(dateText)) {
+        return sendWebhook({ content: `Invalid Date: ${link}` }, config.webhooks.rejectedStory);
+    }
 
     const contentParts: string[] = [];
     $('div[data-pub-type="text"]').children().each((_idx, element) => {

@@ -2,6 +2,9 @@ import { load } from "npm:cheerio";
 import { fetchWithBrowserHeaders } from "../../../util/web.ts";
 import type { ReleaseMedia, Task, TaskResult } from "../../../types.ts";
 import { reviewRelease } from "../../../handlers/ai-handler.ts";
+import {validateDate} from "../../../util/time.ts";
+import {sendWebhook} from "../../../util/webhook.ts";
+import {config} from "../../../config.ts";
 
 const fmaUrl = "https://www.fma.govt.nz/news/all-releases/media-releases/";
 const baseUrl = "https://www.fma.govt.nz";
@@ -31,6 +34,11 @@ async function fetchInformationFromRelease(link: string): Promise<void> {
     }
 
     const $ = load(html);
+
+    const issueDate = $(".published__text").text().trim();
+    if (!issueDate || !validateDate(issueDate)){
+        return sendWebhook({content: `Invalid Date: ${link}`}, config.webhooks.rejectedStory)
+    }
 
     const contentParts: string[] = [];
     const imageExtensions = ['.jpg', '.jpeg', '.png', '.gif', '.webp'];

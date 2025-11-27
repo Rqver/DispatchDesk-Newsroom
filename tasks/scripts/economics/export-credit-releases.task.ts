@@ -2,6 +2,9 @@ import { load } from "npm:cheerio";
 import { fetchWithBrowserHeaders } from "../../../util/web.ts";
 import type { Task, TaskResult, ReleaseMedia } from "../../../types.ts";
 import { reviewRelease } from "../../../handlers/ai-handler.ts";
+import {validateDate} from "../../../util/time.ts";
+import {sendWebhook} from "../../../util/webhook.ts";
+import {config} from "../../../config.ts";
 
 const nzecNewsUrl = "https://exportcredit.treasury.govt.nz/news";
 const baseUrl = "https://exportcredit.treasury.govt.nz";
@@ -30,6 +33,10 @@ async function fetchInformationFromRelease(link: string) {
     }
 
     const $ = load(html);
+    const issueDate = $(".article__field-issue-date time").text().trim();
+    if (!issueDate || !validateDate(issueDate)){
+        return sendWebhook({content: `Invalid Date: ${link}`}, config.webhooks.rejectedStory)
+    }
 
     const contentParts: string[] = [];
     $('.prose.article__body p').each((_idx, element) => {

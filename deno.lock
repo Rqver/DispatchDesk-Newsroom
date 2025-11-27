@@ -8,6 +8,7 @@
     "npm:@qdrant/js-client-rest@*": "1.15.1_typescript@5.8.3",
     "npm:@types/node@*": "22.15.15",
     "npm:cheerio@*": "1.0.0",
+    "npm:chrono-node@*": "2.9.0",
     "npm:fast-xml-parser@*": "5.2.3",
     "npm:got-scraping@*": "4.1.1",
     "npm:html-entities@*": "2.6.0",
@@ -289,6 +290,9 @@
         "mitt",
         "zod"
       ]
+    },
+    "chrono-node@2.9.0": {
+      "integrity": "sha512-glI4YY2Jy6JII5l3d5FN6rcrIbKSQqKPhWsIRYPK2IK8Mm4Q1ZZFdYIaDqglUNf7gNwG+kWIzTn0omzzE0VkvQ=="
     },
     "cliui@8.0.1": {
       "integrity": "sha512-BSeNnyus75C4//NQ9gQt1/csTXyo/8Sb+afLAkzAptFuMsod9HFokGNudZpi/oQV73hnVK+sR+5PVRMd+Dr7YQ==",
@@ -1078,6 +1082,7 @@
         "puppeteer-core",
         "typed-query-selector"
       ],
+      "deprecated": true,
       "scripts": true,
       "bin": true
     },

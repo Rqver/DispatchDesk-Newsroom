@@ -2,9 +2,12 @@ import { load } from "npm:cheerio";
 import { fetchWithBrowserHeaders } from "../../../util/web.ts";
 import type { Task, TaskResult } from "../../../types.ts";
 import { reviewRelease } from "../../../handlers/ai-handler.ts";
+import { validateDate } from "../../../util/time.ts";
+import { sendWebhook } from "../../../util/webhook.ts";
+import { config } from "../../../config.ts";
 
-const comcomUrl = "https://comcom.govt.nz/news-and-media/media-releases";
-const baseUrl = "https://comcom.govt.nz";
+const baseUrl = "https://www.comcom.govt.nz";
+const comcomUrl = `${baseUrl}/news-and-media/news-and-events/`;
 
 const seenReleaseUrls = new Set<string>();
 let isFirstRun = true;
@@ -31,23 +34,33 @@ async function fetchInformationFromRelease(link: string) {
 
     const $ = load(html);
 
-    const title = $('h1.internal__title').text().trim();
+    const dateText = $('.hero__date .hero__date--bold').text().trim();
+
+    if (!dateText || !validateDate(dateText)) {
+        return sendWebhook({ content: `Invalid Date: ${link}` }, config.webhooks.rejectedStory);
+    }
+
+    const title = $('.hero__title').text().trim();
+
     const contentParts: string[] = [];
 
-    const introText = $('.intro-text p').text().trim();
+    const introText = $('.hero__summary').text().trim();
     if (introText) {
         contentParts.push(introText);
     }
 
-    $('.main-content > p, .main-content > h4').each((_idx, element) => {
-        const text = $(element).text().trim();
-        if (text) {
-            contentParts.push(text);
-        }
+    $('.content-block__content').find('p, h2, h3, h4, ul li').each((_idx, element) => {
+        const el = $(element);
+
+        const text = el.text().trim();
+        if (!text) return;
+
+        if (text.startsWith("Share this:")) return;
+
+        contentParts.push(text);
     });
 
     const content = contentParts.join('\n\n');
-
 
     if (content && title) {
         reviewRelease("Commerce Commission", "Media Release", content, link);
@@ -72,23 +85,19 @@ async function getMediaReleases(): Promise<ComcomMediaRelease[]> {
     const $ = load(html);
     const releases: ComcomMediaRelease[] = [];
 
-    $("div.media-release-item").each((_, element) => {
+    $("div.card").each((_, element) => {
         const item = $(element);
-        const titleEl = item.find("h4 a");
 
+        const titleEl = item.find(".card__title .card__link");
         const title = titleEl.text().trim();
-        const redirectHref = titleEl.attr("href");
+        const href = titleEl.attr("href");
 
         let url: string | undefined;
-        if (redirectHref) {
+        if (href) {
             try {
-                const fullRedirectUrl = new URL(redirectHref, baseUrl);
-                const targetUrl = fullRedirectUrl.searchParams.get('url');
-                if (targetUrl) {
-                    url = targetUrl;
-                }
+                url = new URL(href, baseUrl).href;
             } catch (e) {
-                console.error(`Failed to parse URL from href: ${redirectHref}: ${e}`);
+                console.error(`Failed to parse URL from href: ${href}: ${e}`);
             }
         }
 
