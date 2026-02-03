@@ -1,44 +1,94 @@
-# Dispatch Desk: The Newsroom
-
+# Dispatch Desk (Newsroom)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
-This repository contains the backend data processing, AI and ingestion logic for Dispatch Desk. It is responsible for high-frequency web scraping, RSS Feed/API Monitoring, and automated content review and generation, as well as editorial automation.
+An experimental proof-of-concept of a hands-off media platform, exploring how AI can be used in news aggregation, ranking and presentation of news media.
+This repository contains the web scraping, RSS-feed-listening, and story review and generation part of the project. For the frontend, visit [DispatchDesk](https://github.com/Rqver/DispatchDesk).
 
-This codebase is the "other half" of the project. The complete frontend and backend for the website are open source [here](https://github.com/Rqver/DispatchDesk).
+![Screenshot](https://raw.githubusercontent.com/Rqver/DispatchDesk/refs/heads/main/docs/demo-pics/img.png)
 
-Visit the live site: [dispatchdesk.nz](https://dispatchdesk.nz/) • Read our [mission](https://dispatchdesk.nz/about)
+## Why
+I have an interest in the news media and wanted to explore where and how AI can and can't be used effectively in this space; There are examples of both in this project. 
 
-## About
-This repository houses an ever-growing number of 'tasks' that scrape content for stories from NZ & Global Sources for stories on Dispatch Desk.
-The list of currently active sources is available in the [SOURCES.md](SOURCES.md) file.
+## Current Sources
 
-When a task finds a new piece of information, it is passed to an AI pipeline that evaluates it for newsworthiness, generates a story, and selects appropriate media before publishing the story to our CMS. The system is designed for and is capable of continuous, unattended operation.
+### Economics
 
-While you are welcome to explore, learn from, fork and run the codebase locally, it is not intended as a turnkey solution for others to deploy.
+- https://x.com/ReserveBankofNZ
+- https://www.ppta.org.nz/news-and-media/rss
+- https://www.comcom.govt.nz/news-and-media/news-and-events/
+- https://exportcredit.treasury.govt.nz/news
+- https://www.fma.govt.nz/news/all-releases/media-releases/
+- https://www.ikea.com/nz/en/newsroom/
+- https://www.insolvency.govt.nz/about/news-and-other-notices
+- https://www.ird.govt.nz/media-releases
+- https://www.msd.govt.nz/about-msd-and-our-work/newsroom/index.html
+- https://www.roymorgan.com/findings
+- https://www.stats.govt.nz/insights
+- https://www.takeovers.govt.nz/about-the-panel/news
 
-## Tech Stack
-* **Codebase**: Deno v2, Typescript
-* **Scraping Libraries**: [impit](https://github.com/apify/impit), [cheerio](https://github.com/cheeriojs/cheerio), [puppeteer](https://github.com/puppeteer/puppeteer) 
-* **Integrations**: Qdrant (Vector DB For File Photo Embeddings), OpenAI API 
+### Emergency, Justice & Health
 
-## The use of AI
-The codebase uses three different versions of GPT-5 in an attempt to reduce costs.
-* The smallest model, [GPT-5-Nano](https://platform.openai.com/docs/models/gpt-5-nano) is used for quick decisions of whether a story is worth pursuing, and if so, categorization of that story.
-* The mini model, [GPT-5-Mini](https://platform.openai.com/docs/models/gpt-5-mini) is responsible for deciding where what stories go on the home page. 
-* The full-size [GPT-5](https://platform.openai.com/docs/models/gpt-5) is responsible for writing stories.
+- https://alerthub.civildefence.govt.nz/rss/pwp
+- https://www.fireandemergency.nz/incidents-and-news/news-and-media/rss/
+- https://www.gcsb.govt.nz/news/rss
+- https://www.nzsis.govt.nz/news/rss
+- https://www.pharmac.govt.nz/news-and-resources/news/rss
+- https://www.police.govt.nz/rss/news
+- https://www.stjohn.org.nz/RSS
+- https://www.coastguard.nz/our-story/news-and-media
+- https://api.geonet.org.nz/news/geonet
+- https://api.geonet.org.nz/quake?MMI=5
+- https://www.hdc.org.nz/decisions/latest-decisions/
+- https://www.hdc.org.nz/news-resources/news/
+- https://www.ipca.govt.nz/Site/publications-and-media/Summaries-of-Police-investigations-overseen-by-the-IPCA.aspx
+- https://www.ipca.govt.nz/Site/publications-and-media/2026-Media-Releases/
+- https://www.nzdf.mil.nz/media-centre/news/
+- https://www.health.govt.nz/news
+- https://www.justice.govt.nz/about/news-and-media/news/
+- https://www.nzpfu.org.nz/news/
 
-We also make use of the OpenAI [text-embedding-3-small](https://platform.openai.com/docs/guides/embeddings) model to pair generated stories with file photos, when an image is not provided in the release.
+#### Government
 
-## Contributing
-We welcome contributions of all kinds, from bug reports to feature suggestions and pull requests.
+- https://www.elections.nz/media-and-news/rss
+- https://www.beehive.govt.nz/releases/feed
+- https://www.worksafe.govt.nz/about-us/news-and-media/rss
+- https://ourauckland.aucklandcouncil.govt.nz/media-centre/
+- https://www.dia.govt.nz/press.nsf/index?OpenView
+- https://www.mpi.govt.nz/news/
+- https://oag.parliament.nz/reports/latest
+- https://www.privacy.org.nz/news/statements-media-releases/
+- https://www.publicservice.govt.nz/news
+- https://www.waitangitribunal.govt.nz/en/news
 
-If you're interested in adding a new source to monitor, start by making an issue to discuss it with me first.
+## Running Locally
+### Requirements
 
-### Development Setup
-If you'd like to run the project locally, you will need to use Deno (v2.x or later). <br/>
-You do not need a .env file to run the application. Where API keys for Open AI, Qdrant Access, Directus, Mapbox, and webhooks are not available, those portions of the program will be gracefully disabled.
+- [Deno](https://deno.com/) v2.0 or later.
+- An instance of Directus available with the Dispatch Desk Schema Loaded:
+  - The schema is available at [snapshot.yaml](snapshot.yaml), and can be imported using `npx directus schema apply ./snapshot.yaml`.
+- An OpenAI API Key.
+- A [Qdrant](https://qdrant.tech/) instance available.
+- (Optional) A Nitter instance available with RSS Feeds (req. for certain sources).
+- (Optional) A Mapbox API key (req. for generating images from certain sources).
+- (Optional) One or more discord webhooks for various logs.
 
-#### Testing a Single Task
-To test a specific task in isolation:
-* Make use of the commented-out testTask call in the scheduler.ts file
-* If your task makes use of a headless browser, you will have to launch the browser pool in dev mode by passing (true) as the sole argument when launching the pool in main.ts
+### Environment Variables
+Rename the `.env.example` file to `.env`. The project has various mandatory and required environment variables:
+
+- `OPENAI_API_KEY`: The API key for your OpenAI account.
+- `QDRANT_URL`: The URL to your [Qdrant](https://qdrant.tech/) instance. 
+- `QDRANT_COLLECTION`: The name of your [Qdrant](https://qdrant.tech/) collection, e.g. `images`.
+- `DIRECTUS_URL`: The URL of your Directus instance.
+- `DIRECTUS_ACCESS_TOKEN`: The access token for your Directus API Account.
+- `DIRECTUS_FILE_PHOTOS_FOLDER`: The ID of the folder where your file photos for Qdrant to store vectors of, are kept.
+- (Optional) `NITTER_URL`: The URL to your RSS-enabled Nitter instance.
+- (Optional) `MAPBOX_ACCESS_TOKEN`: Your Mapbox API Access Token.
+- (Optional): All webhook variables.
+
+### Starting
+
+- Ensure you have [Deno](https://deno.com/) installed.
+- Use `deno install` if you haven't already. Ensure you allow additional install scripts to be ran.
+- Use `deno task start` to start the project.
+ 
+

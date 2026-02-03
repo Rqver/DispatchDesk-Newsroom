@@ -1,0 +1,3091 @@
+version: 1
+directus: 11.8.0
+vendor: postgres
+collections:
+  - collection: Home_Page
+    meta:
+      accountability: all
+      archive_app_filter: true
+      archive_field: null
+      archive_value: null
+      collapse: open
+      collection: Home_Page
+      color: null
+      display_template: null
+      group: null
+      hidden: false
+      icon: folder
+      item_duplication_fields: null
+      note: null
+      preview_url: null
+      singleton: false
+      sort: 1
+      sort_field: null
+      translations: null
+      unarchive_value: null
+      versioning: false
+  - collection: Live_Blogging
+    meta:
+      accountability: all
+      archive_app_filter: true
+      archive_field: null
+      archive_value: null
+      collapse: open
+      collection: Live_Blogging
+      color: null
+      display_template: null
+      group: News_Desk
+      hidden: false
+      icon: folder
+      item_duplication_fields: null
+      note: null
+      preview_url: null
+      singleton: false
+      sort: 3
+      sort_field: null
+      translations: null
+      unarchive_value: null
+      versioning: false
+  - collection: News_Desk
+    meta:
+      accountability: all
+      archive_app_filter: true
+      archive_field: null
+      archive_value: null
+      collapse: open
+      collection: News_Desk
+      color: null
+      display_template: null
+      group: null
+      hidden: false
+      icon: folder
+      item_duplication_fields: null
+      note: null
+      preview_url: null
+      singleton: false
+      sort: 2
+      sort_field: null
+      translations: null
+      unarchive_value: null
+      versioning: false
+  - collection: breaking_news_bar
+    meta:
+      accountability: all
+      archive_app_filter: true
+      archive_field: null
+      archive_value: null
+      collapse: open
+      collection: breaking_news_bar
+      color: '#E35169'
+      display_template: null
+      group: Home_Page
+      hidden: false
+      icon: warning
+      item_duplication_fields: null
+      note: null
+      preview_url: null
+      singleton: true
+      sort: 3
+      sort_field: null
+      translations: null
+      unarchive_value: null
+      versioning: false
+    schema:
+      name: breaking_news_bar
+  - collection: categories
+    meta:
+      accountability: all
+      archive_app_filter: true
+      archive_field: null
+      archive_value: null
+      collapse: open
+      collection: categories
+      color: null
+      display_template: '{{name}}'
+      group: News_Desk
+      hidden: false
+      icon: dynamic_feed
+      item_duplication_fields: null
+      note: null
+      preview_url: null
+      singleton: false
+      sort: 2
+      sort_field: null
+      translations: null
+      unarchive_value: null
+      versioning: false
+    schema:
+      name: categories
+  - collection: featured_categories
+    meta:
+      accountability: all
+      archive_app_filter: true
+      archive_field: null
+      archive_value: null
+      collapse: open
+      collection: featured_categories
+      color: null
+      display_template: null
+      group: Home_Page
+      hidden: false
+      icon: screenshot_monitor
+      item_duplication_fields: null
+      note: null
+      preview_url: null
+      singleton: true
+      sort: 2
+      sort_field: null
+      translations: null
+      unarchive_value: null
+      versioning: false
+    schema:
+      name: featured_categories
+  - collection: featured_stories
+    meta:
+      accountability: all
+      archive_app_filter: true
+      archive_field: null
+      archive_value: null
+      collapse: open
+      collection: featured_stories
+      color: null
+      display_template: null
+      group: Home_Page
+      hidden: false
+      icon: desktop_windows
+      item_duplication_fields: null
+      note: null
+      preview_url: null
+      singleton: true
+      sort: 1
+      sort_field: null
+      translations: null
+      unarchive_value: null
+      versioning: false
+    schema:
+      name: featured_stories
+  - collection: live_blog_entries
+    meta:
+      accountability: all
+      archive_app_filter: true
+      archive_field: null
+      archive_value: null
+      collapse: open
+      collection: live_blog_entries
+      color: null
+      display_template: null
+      group: Live_Blogging
+      hidden: false
+      icon: post_add
+      item_duplication_fields: null
+      note: null
+      preview_url: null
+      singleton: false
+      sort: 2
+      sort_field: null
+      translations: null
+      unarchive_value: null
+      versioning: false
+    schema:
+      name: live_blog_entries
+  - collection: live_blogs
+    meta:
+      accountability: all
+      archive_app_filter: true
+      archive_field: null
+      archive_value: null
+      collapse: open
+      collection: live_blogs
+      color: null
+      display_template: null
+      group: Live_Blogging
+      hidden: false
+      icon: rss_feed
+      item_duplication_fields: null
+      note: null
+      preview_url: null
+      singleton: false
+      sort: 1
+      sort_field: null
+      translations: null
+      unarchive_value: null
+      versioning: false
+    schema:
+      name: live_blogs
+  - collection: stories
+    meta:
+      accountability: all
+      archive_app_filter: true
+      archive_field: null
+      archive_value: null
+      collapse: open
+      collection: stories
+      color: null
+      display_template: null
+      group: News_Desk
+      hidden: false
+      icon: edit_square
+      item_duplication_fields: null
+      note: null
+      preview_url: null
+      singleton: false
+      sort: 1
+      sort_field: null
+      translations: null
+      unarchive_value: null
+      versioning: false
+    schema:
+      name: stories
+  - collection: stories_categories
+    meta:
+      accountability: all
+      archive_app_filter: true
+      archive_field: null
+      archive_value: null
+      collapse: open
+      collection: stories_categories
+      color: null
+      display_template: null
+      group: null
+      hidden: true
+      icon: import_export
+      item_duplication_fields: null
+      note: null
+      preview_url: null
+      singleton: false
+      sort: null
+      sort_field: null
+      translations: null
+      unarchive_value: null
+      versioning: false
+    schema:
+      name: stories_categories
+fields:
+  - collection: breaking_news_bar
+    field: id
+    type: integer
+    meta:
+      collection: breaking_news_bar
+      conditions: null
+      display: null
+      display_options: null
+      field: id
+      group: null
+      hidden: true
+      interface: input
+      note: null
+      options: null
+      readonly: true
+      required: false
+      sort: 1
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: id
+      table: breaking_news_bar
+      data_type: integer
+      default_value: nextval('breaking_news_bar_id_seq'::regclass)
+      max_length: null
+      numeric_precision: 32
+      numeric_scale: 0
+      is_nullable: false
+      is_unique: true
+      is_indexed: false
+      is_primary_key: true
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: true
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: breaking_news_bar
+    field: enabled
+    type: boolean
+    meta:
+      collection: breaking_news_bar
+      conditions: null
+      display: null
+      display_options: null
+      field: enabled
+      group: null
+      hidden: false
+      interface: boolean
+      note: null
+      options:
+        colorOff: '#A2B5CD'
+        colorOn: '#E35169'
+      readonly: false
+      required: true
+      sort: 2
+      special:
+        - cast-boolean
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: enabled
+      table: breaking_news_bar
+      data_type: boolean
+      default_value: false
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: breaking_news_bar
+    field: headline
+    type: text
+    meta:
+      collection: breaking_news_bar
+      conditions: null
+      display: null
+      display_options: null
+      field: headline
+      group: null
+      hidden: false
+      interface: input
+      note: null
+      options: null
+      readonly: false
+      required: true
+      sort: 4
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: headline
+      table: breaking_news_bar
+      data_type: text
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: breaking_news_bar
+    field: story_link
+    type: integer
+    meta:
+      collection: breaking_news_bar
+      conditions: null
+      display: null
+      display_options: null
+      field: story_link
+      group: null
+      hidden: false
+      interface: select-dropdown-m2o
+      note: null
+      options:
+        enableCreate: false
+        enableLink: true
+        filter:
+          _and:
+            - status:
+                _eq: PUBLISHED
+            - is_breaking:
+                _eq: null
+        template: '{{title}}'
+      readonly: false
+      required: true
+      sort: 5
+      special:
+        - m2o
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: story_link
+      table: breaking_news_bar
+      data_type: integer
+      default_value: null
+      max_length: null
+      numeric_precision: 32
+      numeric_scale: 0
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: stories
+      foreign_key_column: id
+  - collection: breaking_news_bar
+    field: prefix
+    type: text
+    meta:
+      collection: breaking_news_bar
+      conditions: null
+      display: null
+      display_options: null
+      field: prefix
+      group: null
+      hidden: false
+      interface: input
+      note: null
+      options: null
+      readonly: false
+      required: true
+      sort: 3
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: prefix
+      table: breaking_news_bar
+      data_type: text
+      default_value: BREAKING
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: categories
+    field: id
+    type: integer
+    meta:
+      collection: categories
+      conditions: null
+      display: null
+      display_options: null
+      field: id
+      group: null
+      hidden: true
+      interface: input
+      note: null
+      options: null
+      readonly: true
+      required: false
+      sort: 1
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: id
+      table: categories
+      data_type: integer
+      default_value: nextval('categories_id_seq'::regclass)
+      max_length: null
+      numeric_precision: 32
+      numeric_scale: 0
+      is_nullable: false
+      is_unique: true
+      is_indexed: false
+      is_primary_key: true
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: true
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: categories
+    field: name
+    type: text
+    meta:
+      collection: categories
+      conditions: null
+      display: null
+      display_options: null
+      field: name
+      group: null
+      hidden: false
+      interface: input
+      note: null
+      options: null
+      readonly: false
+      required: true
+      sort: 2
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: name
+      table: categories
+      data_type: text
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: categories
+    field: slug
+    type: text
+    meta:
+      collection: categories
+      conditions: null
+      display: null
+      display_options: null
+      field: slug
+      group: null
+      hidden: false
+      interface: input
+      note: >-
+        Will be automatically populated. If you fail a UNIQUE constraint, append
+        -2 or -3 etc. until it works.
+      options:
+        placeholder: null
+      readonly: false
+      required: false
+      sort: 3
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: slug
+      table: categories
+      data_type: text
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: true
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: featured_categories
+    field: id
+    type: integer
+    meta:
+      collection: featured_categories
+      conditions: null
+      display: null
+      display_options: null
+      field: id
+      group: null
+      hidden: true
+      interface: input
+      note: null
+      options: null
+      readonly: true
+      required: false
+      sort: 1
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: id
+      table: featured_categories
+      data_type: integer
+      default_value: nextval('featured_categories_id_seq'::regclass)
+      max_length: null
+      numeric_precision: 32
+      numeric_scale: 0
+      is_nullable: false
+      is_unique: true
+      is_indexed: false
+      is_primary_key: true
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: true
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: featured_categories
+    field: category_one
+    type: integer
+    meta:
+      collection: featured_categories
+      conditions: null
+      display: null
+      display_options: null
+      field: category_one
+      group: null
+      hidden: false
+      interface: select-dropdown-m2o
+      note: null
+      options:
+        enableLink: true
+        template: '{{name}}'
+      readonly: false
+      required: true
+      sort: 2
+      special:
+        - m2o
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: category_one
+      table: featured_categories
+      data_type: integer
+      default_value: null
+      max_length: null
+      numeric_precision: 32
+      numeric_scale: 0
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: categories
+      foreign_key_column: id
+  - collection: featured_categories
+    field: category_two
+    type: integer
+    meta:
+      collection: featured_categories
+      conditions: null
+      display: null
+      display_options: null
+      field: category_two
+      group: null
+      hidden: false
+      interface: select-dropdown-m2o
+      note: null
+      options:
+        enableLink: true
+        template: '{{name}}'
+      readonly: false
+      required: true
+      sort: 3
+      special:
+        - m2o
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: category_two
+      table: featured_categories
+      data_type: integer
+      default_value: null
+      max_length: null
+      numeric_precision: 32
+      numeric_scale: 0
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: categories
+      foreign_key_column: id
+  - collection: featured_categories
+    field: category_three
+    type: integer
+    meta:
+      collection: featured_categories
+      conditions: null
+      display: null
+      display_options: null
+      field: category_three
+      group: null
+      hidden: false
+      interface: select-dropdown-m2o
+      note: null
+      options:
+        enableLink: true
+        template: '{{name}}'
+      readonly: false
+      required: true
+      sort: 4
+      special:
+        - m2o
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: category_three
+      table: featured_categories
+      data_type: integer
+      default_value: null
+      max_length: null
+      numeric_precision: 32
+      numeric_scale: 0
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: categories
+      foreign_key_column: id
+  - collection: featured_categories
+    field: category_four
+    type: integer
+    meta:
+      collection: featured_categories
+      conditions: null
+      display: null
+      display_options: null
+      field: category_four
+      group: null
+      hidden: false
+      interface: select-dropdown-m2o
+      note: null
+      options:
+        enableLink: true
+        template: '{{name}}'
+      readonly: false
+      required: false
+      sort: 5
+      special:
+        - m2o
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: category_four
+      table: featured_categories
+      data_type: integer
+      default_value: null
+      max_length: null
+      numeric_precision: 32
+      numeric_scale: 0
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: categories
+      foreign_key_column: id
+  - collection: featured_categories
+    field: category_five
+    type: integer
+    meta:
+      collection: featured_categories
+      conditions: null
+      display: null
+      display_options: null
+      field: category_five
+      group: null
+      hidden: false
+      interface: select-dropdown-m2o
+      note: null
+      options:
+        enableLink: true
+        template: '{{name}}'
+      readonly: false
+      required: false
+      sort: 6
+      special:
+        - m2o
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: category_five
+      table: featured_categories
+      data_type: integer
+      default_value: null
+      max_length: null
+      numeric_precision: 32
+      numeric_scale: 0
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: categories
+      foreign_key_column: id
+  - collection: featured_stories
+    field: id
+    type: integer
+    meta:
+      collection: featured_stories
+      conditions: null
+      display: null
+      display_options: null
+      field: id
+      group: null
+      hidden: true
+      interface: input
+      note: null
+      options: null
+      readonly: true
+      required: false
+      sort: 1
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: id
+      table: featured_stories
+      data_type: integer
+      default_value: nextval('featured_stories_id_seq'::regclass)
+      max_length: null
+      numeric_precision: 32
+      numeric_scale: 0
+      is_nullable: false
+      is_unique: true
+      is_indexed: false
+      is_primary_key: true
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: true
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: featured_stories
+    field: main_story
+    type: integer
+    meta:
+      collection: featured_stories
+      conditions: null
+      display: null
+      display_options: null
+      field: main_story
+      group: null
+      hidden: false
+      interface: select-dropdown-m2o
+      note: null
+      options:
+        enableCreate: false
+        enableLink: true
+        filter:
+          _and:
+            - status:
+                _eq: PUBLISHED
+        template: '{{title}}'
+      readonly: false
+      required: true
+      sort: 2
+      special:
+        - m2o
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: main_story
+      table: featured_stories
+      data_type: integer
+      default_value: null
+      max_length: null
+      numeric_precision: 32
+      numeric_scale: 0
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: stories
+      foreign_key_column: id
+  - collection: featured_stories
+    field: top_story_one
+    type: integer
+    meta:
+      collection: featured_stories
+      conditions: null
+      display: null
+      display_options: null
+      field: top_story_one
+      group: null
+      hidden: false
+      interface: select-dropdown-m2o
+      note: null
+      options:
+        enableCreate: false
+        enableLink: true
+        filter:
+          _and:
+            - status:
+                _eq: PUBLISHED
+        template: '{{title}}'
+      readonly: false
+      required: true
+      sort: 3
+      special:
+        - m2o
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: top_story_one
+      table: featured_stories
+      data_type: integer
+      default_value: null
+      max_length: null
+      numeric_precision: 32
+      numeric_scale: 0
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: stories
+      foreign_key_column: id
+  - collection: featured_stories
+    field: secondary_story_one
+    type: integer
+    meta:
+      collection: featured_stories
+      conditions: null
+      display: null
+      display_options: null
+      field: secondary_story_one
+      group: null
+      hidden: false
+      interface: select-dropdown-m2o
+      note: null
+      options:
+        enableCreate: false
+        enableLink: true
+        filter:
+          _and:
+            - status:
+                _eq: PUBLISHED
+        template: '{{title}}'
+      readonly: false
+      required: true
+      sort: 5
+      special:
+        - m2o
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: secondary_story_one
+      table: featured_stories
+      data_type: integer
+      default_value: null
+      max_length: null
+      numeric_precision: 32
+      numeric_scale: 0
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: stories
+      foreign_key_column: id
+  - collection: featured_stories
+    field: secondary_story_two
+    type: integer
+    meta:
+      collection: featured_stories
+      conditions: null
+      display: null
+      display_options: null
+      field: secondary_story_two
+      group: null
+      hidden: false
+      interface: select-dropdown-m2o
+      note: null
+      options:
+        enableCreate: false
+        enableLink: true
+        filter:
+          _and:
+            - status:
+                _eq: PUBLISHED
+        template: '{{title}}'
+      readonly: false
+      required: true
+      sort: 6
+      special:
+        - m2o
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: secondary_story_two
+      table: featured_stories
+      data_type: integer
+      default_value: null
+      max_length: null
+      numeric_precision: 32
+      numeric_scale: 0
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: stories
+      foreign_key_column: id
+  - collection: featured_stories
+    field: secondary_story_three
+    type: integer
+    meta:
+      collection: featured_stories
+      conditions: null
+      display: null
+      display_options: null
+      field: secondary_story_three
+      group: null
+      hidden: false
+      interface: select-dropdown-m2o
+      note: null
+      options:
+        enableCreate: false
+        enableLink: true
+        filter:
+          _and:
+            - status:
+                _eq: PUBLISHED
+        template: '{{title}}'
+      readonly: false
+      required: true
+      sort: 7
+      special:
+        - m2o
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: secondary_story_three
+      table: featured_stories
+      data_type: integer
+      default_value: null
+      max_length: null
+      numeric_precision: 32
+      numeric_scale: 0
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: stories
+      foreign_key_column: id
+  - collection: featured_stories
+    field: special_separator_story
+    type: integer
+    meta:
+      collection: featured_stories
+      conditions: null
+      display: null
+      display_options: null
+      field: special_separator_story
+      group: null
+      hidden: false
+      interface: select-dropdown-m2o
+      note: null
+      options:
+        enableCreate: false
+        enableLink: true
+        filter:
+          _and:
+            - status:
+                _eq: PUBLISHED
+        template: '{{title}}'
+      readonly: false
+      required: false
+      sort: 8
+      special:
+        - m2o
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: special_separator_story
+      table: featured_stories
+      data_type: integer
+      default_value: null
+      max_length: null
+      numeric_precision: 32
+      numeric_scale: 0
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: stories
+      foreign_key_column: id
+  - collection: featured_stories
+    field: additional_story_one
+    type: integer
+    meta:
+      collection: featured_stories
+      conditions: null
+      display: null
+      display_options: null
+      field: additional_story_one
+      group: null
+      hidden: false
+      interface: select-dropdown-m2o
+      note: null
+      options:
+        enableCreate: false
+        enableLink: true
+        filter:
+          _and:
+            - status:
+                _eq: PUBLISHED
+        template: '{{title}}'
+      readonly: false
+      required: true
+      sort: 9
+      special:
+        - m2o
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: additional_story_one
+      table: featured_stories
+      data_type: integer
+      default_value: null
+      max_length: null
+      numeric_precision: 32
+      numeric_scale: 0
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: stories
+      foreign_key_column: id
+  - collection: featured_stories
+    field: additional_story_two
+    type: integer
+    meta:
+      collection: featured_stories
+      conditions: null
+      display: null
+      display_options: null
+      field: additional_story_two
+      group: null
+      hidden: false
+      interface: select-dropdown-m2o
+      note: null
+      options:
+        enableCreate: false
+        enableLink: true
+        filter:
+          _and:
+            - status:
+                _eq: PUBLISHED
+        template: '{{title}}'
+      readonly: false
+      required: true
+      sort: 10
+      special:
+        - m2o
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: additional_story_two
+      table: featured_stories
+      data_type: integer
+      default_value: null
+      max_length: null
+      numeric_precision: 32
+      numeric_scale: 0
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: stories
+      foreign_key_column: id
+  - collection: featured_stories
+    field: additional_story_three
+    type: integer
+    meta:
+      collection: featured_stories
+      conditions: null
+      display: null
+      display_options: null
+      field: additional_story_three
+      group: null
+      hidden: false
+      interface: select-dropdown-m2o
+      note: null
+      options:
+        enableCreate: false
+        enableLink: true
+        filter:
+          _and:
+            - status:
+                _eq: PUBLISHED
+        template: '{{title}}'
+      readonly: false
+      required: true
+      sort: 11
+      special:
+        - m2o
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: additional_story_three
+      table: featured_stories
+      data_type: integer
+      default_value: null
+      max_length: null
+      numeric_precision: 32
+      numeric_scale: 0
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: stories
+      foreign_key_column: id
+  - collection: featured_stories
+    field: additional_story_four
+    type: integer
+    meta:
+      collection: featured_stories
+      conditions: null
+      display: null
+      display_options: null
+      field: additional_story_four
+      group: null
+      hidden: false
+      interface: select-dropdown-m2o
+      note: null
+      options:
+        enableCreate: false
+        enableLink: true
+        filter:
+          _and:
+            - status:
+                _eq: PUBLISHED
+        template: '{{title}}'
+      readonly: false
+      required: false
+      sort: 12
+      special:
+        - m2o
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: additional_story_four
+      table: featured_stories
+      data_type: integer
+      default_value: null
+      max_length: null
+      numeric_precision: 32
+      numeric_scale: 0
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: stories
+      foreign_key_column: id
+  - collection: featured_stories
+    field: additional_story_five
+    type: integer
+    meta:
+      collection: featured_stories
+      conditions: null
+      display: null
+      display_options: null
+      field: additional_story_five
+      group: null
+      hidden: false
+      interface: select-dropdown-m2o
+      note: It looks kind of stupid if this has a story and number four does not.
+      options:
+        enableCreate: false
+        enableLink: true
+        filter:
+          _and:
+            - status:
+                _eq: PUBLISHED
+        template: '{{title}}'
+      readonly: false
+      required: false
+      sort: 13
+      special:
+        - m2o
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: additional_story_five
+      table: featured_stories
+      data_type: integer
+      default_value: null
+      max_length: null
+      numeric_precision: 32
+      numeric_scale: 0
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: stories
+      foreign_key_column: id
+  - collection: featured_stories
+    field: additional_story_six
+    type: integer
+    meta:
+      collection: featured_stories
+      conditions: null
+      display: null
+      display_options: null
+      field: additional_story_six
+      group: null
+      hidden: false
+      interface: select-dropdown-m2o
+      note: It looks kind of stupid if this has a story and number five does not.
+      options:
+        enableCreate: false
+        enableLink: true
+        filter:
+          _and:
+            - status:
+                _eq: PUBLISHED
+        template: '{{title}}'
+      readonly: false
+      required: false
+      sort: 14
+      special:
+        - m2o
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: additional_story_six
+      table: featured_stories
+      data_type: integer
+      default_value: null
+      max_length: null
+      numeric_precision: 32
+      numeric_scale: 0
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: stories
+      foreign_key_column: id
+  - collection: live_blog_entries
+    field: id
+    type: integer
+    meta:
+      collection: live_blog_entries
+      conditions: null
+      display: null
+      display_options: null
+      field: id
+      group: null
+      hidden: true
+      interface: input
+      note: null
+      options: null
+      readonly: true
+      required: false
+      sort: 1
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: id
+      table: live_blog_entries
+      data_type: integer
+      default_value: nextval('live_blog_entries_id_seq'::regclass)
+      max_length: null
+      numeric_precision: 32
+      numeric_scale: 0
+      is_nullable: false
+      is_unique: true
+      is_indexed: false
+      is_primary_key: true
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: true
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: live_blog_entries
+    field: date_created
+    type: timestamp
+    meta:
+      collection: live_blog_entries
+      conditions: null
+      display: datetime
+      display_options:
+        relative: true
+      field: date_created
+      group: null
+      hidden: true
+      interface: datetime
+      note: null
+      options: null
+      readonly: true
+      required: false
+      sort: 2
+      special:
+        - date-created
+      translations: null
+      validation: null
+      validation_message: null
+      width: half
+    schema:
+      name: date_created
+      table: live_blog_entries
+      data_type: timestamp with time zone
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: live_blog_entries
+    field: title
+    type: text
+    meta:
+      collection: live_blog_entries
+      conditions: null
+      display: null
+      display_options: null
+      field: title
+      group: null
+      hidden: false
+      interface: input
+      note: null
+      options: null
+      readonly: false
+      required: true
+      sort: 4
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: title
+      table: live_blog_entries
+      data_type: text
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: live_blog_entries
+    field: entry
+    type: text
+    meta:
+      collection: live_blog_entries
+      conditions: null
+      display: null
+      display_options: null
+      field: entry
+      group: null
+      hidden: false
+      interface: input-rich-text-html
+      note: null
+      options: null
+      readonly: false
+      required: true
+      sort: 5
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: entry
+      table: live_blog_entries
+      data_type: text
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: live_blog_entries
+    field: live_blog
+    type: integer
+    meta:
+      collection: live_blog_entries
+      conditions: null
+      display: null
+      display_options: null
+      field: live_blog
+      group: null
+      hidden: false
+      interface: select-dropdown-m2o
+      note: null
+      options:
+        template: '{{name}}'
+      readonly: false
+      required: true
+      sort: 3
+      special:
+        - m2o
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: live_blog
+      table: live_blog_entries
+      data_type: integer
+      default_value: null
+      max_length: null
+      numeric_precision: 32
+      numeric_scale: 0
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: live_blogs
+      foreign_key_column: id
+  - collection: live_blogs
+    field: id
+    type: integer
+    meta:
+      collection: live_blogs
+      conditions: null
+      display: null
+      display_options: null
+      field: id
+      group: null
+      hidden: true
+      interface: input
+      note: null
+      options: null
+      readonly: true
+      required: false
+      sort: 1
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: id
+      table: live_blogs
+      data_type: integer
+      default_value: nextval('live_blogs_id_seq'::regclass)
+      max_length: null
+      numeric_precision: 32
+      numeric_scale: 0
+      is_nullable: false
+      is_unique: true
+      is_indexed: false
+      is_primary_key: true
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: true
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: live_blogs
+    field: date_created
+    type: timestamp
+    meta:
+      collection: live_blogs
+      conditions: null
+      display: datetime
+      display_options:
+        relative: true
+      field: date_created
+      group: null
+      hidden: true
+      interface: datetime
+      note: null
+      options: null
+      readonly: true
+      required: false
+      sort: 2
+      special:
+        - date-created
+      translations: null
+      validation: null
+      validation_message: null
+      width: half
+    schema:
+      name: date_created
+      table: live_blogs
+      data_type: timestamp with time zone
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: live_blogs
+    field: date_updated
+    type: timestamp
+    meta:
+      collection: live_blogs
+      conditions: null
+      display: datetime
+      display_options:
+        relative: true
+      field: date_updated
+      group: null
+      hidden: true
+      interface: datetime
+      note: null
+      options: null
+      readonly: true
+      required: false
+      sort: 3
+      special:
+        - date-updated
+      translations: null
+      validation: null
+      validation_message: null
+      width: half
+    schema:
+      name: date_updated
+      table: live_blogs
+      data_type: timestamp with time zone
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: live_blogs
+    field: name
+    type: text
+    meta:
+      collection: live_blogs
+      conditions: null
+      display: null
+      display_options: null
+      field: name
+      group: null
+      hidden: false
+      interface: input
+      note: null
+      options: null
+      readonly: false
+      required: true
+      sort: 4
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: name
+      table: live_blogs
+      data_type: text
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: live_blogs
+    field: pinned_entry
+    type: integer
+    meta:
+      collection: live_blogs
+      conditions: null
+      display: null
+      display_options: null
+      field: pinned_entry
+      group: null
+      hidden: false
+      interface: select-dropdown-m2o
+      note: null
+      options:
+        template: '{{title}}'
+      readonly: false
+      required: false
+      sort: 5
+      special:
+        - m2o
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: pinned_entry
+      table: live_blogs
+      data_type: integer
+      default_value: null
+      max_length: null
+      numeric_precision: 32
+      numeric_scale: 0
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: live_blog_entries
+      foreign_key_column: id
+  - collection: stories
+    field: id
+    type: integer
+    meta:
+      collection: stories
+      conditions: null
+      display: null
+      display_options: null
+      field: id
+      group: null
+      hidden: true
+      interface: input
+      note: null
+      options: null
+      readonly: true
+      required: false
+      sort: 1
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: id
+      table: stories
+      data_type: integer
+      default_value: nextval('stories_id_seq'::regclass)
+      max_length: null
+      numeric_precision: 32
+      numeric_scale: 0
+      is_nullable: false
+      is_unique: true
+      is_indexed: false
+      is_primary_key: true
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: true
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: stories
+    field: title
+    type: text
+    meta:
+      collection: stories
+      conditions: null
+      display: null
+      display_options: null
+      field: title
+      group: null
+      hidden: false
+      interface: input
+      note: null
+      options: null
+      readonly: false
+      required: true
+      sort: 2
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: title
+      table: stories
+      data_type: text
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: stories
+    field: slug
+    type: text
+    meta:
+      collection: stories
+      conditions: null
+      display: null
+      display_options: null
+      field: slug
+      group: null
+      hidden: false
+      interface: input
+      note: >-
+        Will be automatically populated. If you fail a UNIQUE constraint, append
+        -2 or -3 etc. until it works.
+      options: null
+      readonly: false
+      required: false
+      sort: 16
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: slug
+      table: stories
+      data_type: text
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: true
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: stories
+    field: body
+    type: text
+    meta:
+      collection: stories
+      conditions: null
+      display: null
+      display_options: null
+      field: body
+      group: null
+      hidden: false
+      interface: input-rich-text-html
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: 14
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: body
+      table: stories
+      data_type: text
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: stories
+    field: tagline
+    type: text
+    meta:
+      collection: stories
+      conditions: null
+      display: null
+      display_options: null
+      field: tagline
+      group: null
+      hidden: false
+      interface: input
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: 3
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: tagline
+      table: stories
+      data_type: text
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: stories
+    field: status
+    type: string
+    meta:
+      collection: stories
+      conditions: null
+      display: null
+      display_options: null
+      field: status
+      group: null
+      hidden: false
+      interface: select-dropdown
+      note: null
+      options:
+        choices:
+          - text: Draft
+            value: DRAFT
+          - text: Published
+            value: PUBLISHED
+      readonly: false
+      required: true
+      sort: 8
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: status
+      table: stories
+      data_type: character varying
+      default_value: DRAFT
+      max_length: 255
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: stories
+    field: is_breaking
+    type: boolean
+    meta:
+      collection: stories
+      conditions: null
+      display: null
+      display_options: null
+      field: is_breaking
+      group: null
+      hidden: false
+      interface: boolean
+      note: null
+      options:
+        label: 'On'
+      readonly: false
+      required: true
+      sort: 7
+      special:
+        - cast-boolean
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: is_breaking
+      table: stories
+      data_type: boolean
+      default_value: false
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: stories
+    field: author
+    type: text
+    meta:
+      collection: stories
+      conditions: null
+      display: null
+      display_options: null
+      field: author
+      group: null
+      hidden: false
+      interface: input
+      note: null
+      options:
+        placeholder: Dispatch Desk Writers
+      readonly: false
+      required: false
+      sort: 5
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: author
+      table: stories
+      data_type: text
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: stories
+    field: header_media
+    type: uuid
+    meta:
+      collection: stories
+      conditions: null
+      display: null
+      display_options: null
+      field: header_media
+      group: null
+      hidden: false
+      interface: file-image
+      note: null
+      options: null
+      readonly: false
+      required: true
+      sort: 6
+      special:
+        - file
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: header_media
+      table: stories
+      data_type: uuid
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: directus_files
+      foreign_key_column: id
+  - collection: stories
+    field: publish_date
+    type: dateTime
+    meta:
+      collection: stories
+      conditions: null
+      display: null
+      display_options: null
+      field: publish_date
+      group: null
+      hidden: false
+      interface: datetime
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: 12
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: publish_date
+      table: stories
+      data_type: timestamp without time zone
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: stories
+    field: live_blog
+    type: integer
+    meta:
+      collection: stories
+      conditions: null
+      display: null
+      display_options: null
+      field: live_blog
+      group: null
+      hidden: false
+      interface: select-dropdown-m2o
+      note: null
+      options:
+        template: '{{name}}'
+      readonly: false
+      required: false
+      sort: 13
+      special:
+        - m2o
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: live_blog
+      table: stories
+      data_type: integer
+      default_value: null
+      max_length: null
+      numeric_precision: 32
+      numeric_scale: 0
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: live_blogs
+      foreign_key_column: id
+  - collection: stories
+    field: categories
+    type: alias
+    meta:
+      collection: stories
+      conditions: null
+      display: related-values
+      display_options: null
+      field: categories
+      group: null
+      hidden: false
+      interface: list-m2m
+      note: null
+      options:
+        enableCreate: false
+        enableLink: true
+        template: '{{categories_id.name}}'
+      readonly: false
+      required: true
+      sort: 4
+      special:
+        - m2m
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+  - collection: stories
+    field: archived
+    type: boolean
+    meta:
+      collection: stories
+      conditions: null
+      display: null
+      display_options: null
+      field: archived
+      group: null
+      hidden: false
+      interface: boolean
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: 15
+      special:
+        - cast-boolean
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: archived
+      table: stories
+      data_type: boolean
+      default_value: false
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: stories
+    field: ai_written
+    type: boolean
+    meta:
+      collection: stories
+      conditions: null
+      display: null
+      display_options: null
+      field: ai_written
+      group: null
+      hidden: false
+      interface: boolean
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: 9
+      special:
+        - cast-boolean
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: ai_written
+      table: stories
+      data_type: boolean
+      default_value: false
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: stories
+    field: original_source
+    type: string
+    meta:
+      collection: stories
+      conditions: null
+      display: null
+      display_options: null
+      field: original_source
+      group: null
+      hidden: false
+      interface: input
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: 10
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: original_source
+      table: stories
+      data_type: character varying
+      default_value: null
+      max_length: 255
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: stories
+    field: source_name
+    type: string
+    meta:
+      collection: stories
+      conditions: null
+      display: null
+      display_options: null
+      field: source_name
+      group: null
+      hidden: false
+      interface: input
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: 11
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: source_name
+      table: stories
+      data_type: character varying
+      default_value: null
+      max_length: 255
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: stories_categories
+    field: id
+    type: integer
+    meta:
+      collection: stories_categories
+      conditions: null
+      display: null
+      display_options: null
+      field: id
+      group: null
+      hidden: true
+      interface: null
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: 1
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: id
+      table: stories_categories
+      data_type: integer
+      default_value: nextval('stories_categories_id_seq'::regclass)
+      max_length: null
+      numeric_precision: 32
+      numeric_scale: 0
+      is_nullable: false
+      is_unique: true
+      is_indexed: false
+      is_primary_key: true
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: true
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: stories_categories
+    field: stories_id
+    type: integer
+    meta:
+      collection: stories_categories
+      conditions: null
+      display: null
+      display_options: null
+      field: stories_id
+      group: null
+      hidden: true
+      interface: null
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: 2
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: stories_id
+      table: stories_categories
+      data_type: integer
+      default_value: null
+      max_length: null
+      numeric_precision: 32
+      numeric_scale: 0
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: stories
+      foreign_key_column: id
+  - collection: stories_categories
+    field: categories_id
+    type: integer
+    meta:
+      collection: stories_categories
+      conditions: null
+      display: null
+      display_options: null
+      field: categories_id
+      group: null
+      hidden: true
+      interface: null
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: 3
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: categories_id
+      table: stories_categories
+      data_type: integer
+      default_value: null
+      max_length: null
+      numeric_precision: 32
+      numeric_scale: 0
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: categories
+      foreign_key_column: id
+relations:
+  - collection: breaking_news_bar
+    field: story_link
+    related_collection: stories
+    meta:
+      junction_field: null
+      many_collection: breaking_news_bar
+      many_field: story_link
+      one_allowed_collections: null
+      one_collection: stories
+      one_collection_field: null
+      one_deselect_action: nullify
+      one_field: null
+      sort_field: null
+    schema:
+      table: breaking_news_bar
+      column: story_link
+      foreign_key_table: stories
+      foreign_key_column: id
+      constraint_name: breaking_news_bar_story_link_foreign
+      on_update: NO ACTION
+      on_delete: SET NULL
+  - collection: featured_categories
+    field: category_one
+    related_collection: categories
+    meta:
+      junction_field: null
+      many_collection: featured_categories
+      many_field: category_one
+      one_allowed_collections: null
+      one_collection: categories
+      one_collection_field: null
+      one_deselect_action: nullify
+      one_field: null
+      sort_field: null
+    schema:
+      table: featured_categories
+      column: category_one
+      foreign_key_table: categories
+      foreign_key_column: id
+      constraint_name: featured_categories_category_one_foreign
+      on_update: NO ACTION
+      on_delete: SET NULL
+  - collection: featured_categories
+    field: category_two
+    related_collection: categories
+    meta:
+      junction_field: null
+      many_collection: featured_categories
+      many_field: category_two
+      one_allowed_collections: null
+      one_collection: categories
+      one_collection_field: null
+      one_deselect_action: nullify
+      one_field: null
+      sort_field: null
+    schema:
+      table: featured_categories
+      column: category_two
+      foreign_key_table: categories
+      foreign_key_column: id
+      constraint_name: featured_categories_category_two_foreign
+      on_update: NO ACTION
+      on_delete: SET NULL
+  - collection: featured_categories
+    field: category_three
+    related_collection: categories
+    meta:
+      junction_field: null
+      many_collection: featured_categories
+      many_field: category_three
+      one_allowed_collections: null
+      one_collection: categories
+      one_collection_field: null
+      one_deselect_action: nullify
+      one_field: null
+      sort_field: null
+    schema:
+      table: featured_categories
+      column: category_three
+      foreign_key_table: categories
+      foreign_key_column: id
+      constraint_name: featured_categories_category_three_foreign
+      on_update: NO ACTION
+      on_delete: SET NULL
+  - collection: featured_categories
+    field: category_four
+    related_collection: categories
+    meta:
+      junction_field: null
+      many_collection: featured_categories
+      many_field: category_four
+      one_allowed_collections: null
+      one_collection: categories
+      one_collection_field: null
+      one_deselect_action: nullify
+      one_field: null
+      sort_field: null
+    schema:
+      table: featured_categories
+      column: category_four
+      foreign_key_table: categories
+      foreign_key_column: id
+      constraint_name: featured_categories_category_four_foreign
+      on_update: NO ACTION
+      on_delete: SET NULL
+  - collection: featured_categories
+    field: category_five
+    related_collection: categories
+    meta:
+      junction_field: null
+      many_collection: featured_categories
+      many_field: category_five
+      one_allowed_collections: null
+      one_collection: categories
+      one_collection_field: null
+      one_deselect_action: nullify
+      one_field: null
+      sort_field: null
+    schema:
+      table: featured_categories
+      column: category_five
+      foreign_key_table: categories
+      foreign_key_column: id
+      constraint_name: featured_categories_category_five_foreign
+      on_update: NO ACTION
+      on_delete: SET NULL
+  - collection: featured_stories
+    field: main_story
+    related_collection: stories
+    meta:
+      junction_field: null
+      many_collection: featured_stories
+      many_field: main_story
+      one_allowed_collections: null
+      one_collection: stories
+      one_collection_field: null
+      one_deselect_action: nullify
+      one_field: null
+      sort_field: null
+    schema:
+      table: featured_stories
+      column: main_story
+      foreign_key_table: stories
+      foreign_key_column: id
+      constraint_name: featured_stories_main_story_foreign
+      on_update: NO ACTION
+      on_delete: SET NULL
+  - collection: featured_stories
+    field: top_story_one
+    related_collection: stories
+    meta:
+      junction_field: null
+      many_collection: featured_stories
+      many_field: top_story_one
+      one_allowed_collections: null
+      one_collection: stories
+      one_collection_field: null
+      one_deselect_action: nullify
+      one_field: null
+      sort_field: null
+    schema:
+      table: featured_stories
+      column: top_story_one
+      foreign_key_table: stories
+      foreign_key_column: id
+      constraint_name: featured_stories_top_story_one_foreign
+      on_update: NO ACTION
+      on_delete: SET NULL
+  - collection: featured_stories
+    field: secondary_story_one
+    related_collection: stories
+    meta:
+      junction_field: null
+      many_collection: featured_stories
+      many_field: secondary_story_one
+      one_allowed_collections: null
+      one_collection: stories
+      one_collection_field: null
+      one_deselect_action: nullify
+      one_field: null
+      sort_field: null
+    schema:
+      table: featured_stories
+      column: secondary_story_one
+      foreign_key_table: stories
+      foreign_key_column: id
+      constraint_name: featured_stories_secondary_story_one_foreign
+      on_update: NO ACTION
+      on_delete: SET NULL
+  - collection: featured_stories
+    field: secondary_story_two
+    related_collection: stories
+    meta:
+      junction_field: null
+      many_collection: featured_stories
+      many_field: secondary_story_two
+      one_allowed_collections: null
+      one_collection: stories
+      one_collection_field: null
+      one_deselect_action: nullify
+      one_field: null
+      sort_field: null
+    schema:
+      table: featured_stories
+      column: secondary_story_two
+      foreign_key_table: stories
+      foreign_key_column: id
+      constraint_name: featured_stories_secondary_story_two_foreign
+      on_update: NO ACTION
+      on_delete: SET NULL
+  - collection: featured_stories
+    field: secondary_story_three
+    related_collection: stories
+    meta:
+      junction_field: null
+      many_collection: featured_stories
+      many_field: secondary_story_three
+      one_allowed_collections: null
+      one_collection: stories
+      one_collection_field: null
+      one_deselect_action: nullify
+      one_field: null
+      sort_field: null
+    schema:
+      table: featured_stories
+      column: secondary_story_three
+      foreign_key_table: stories
+      foreign_key_column: id
+      constraint_name: featured_stories_secondary_story_three_foreign
+      on_update: NO ACTION
+      on_delete: SET NULL
+  - collection: featured_stories
+    field: special_separator_story
+    related_collection: stories
+    meta:
+      junction_field: null
+      many_collection: featured_stories
+      many_field: special_separator_story
+      one_allowed_collections: null
+      one_collection: stories
+      one_collection_field: null
+      one_deselect_action: nullify
+      one_field: null
+      sort_field: null
+    schema:
+      table: featured_stories
+      column: special_separator_story
+      foreign_key_table: stories
+      foreign_key_column: id
+      constraint_name: featured_stories_special_separator_story_foreign
+      on_update: NO ACTION
+      on_delete: SET NULL
+  - collection: featured_stories
+    field: additional_story_one
+    related_collection: stories
+    meta:
+      junction_field: null
+      many_collection: featured_stories
+      many_field: additional_story_one
+      one_allowed_collections: null
+      one_collection: stories
+      one_collection_field: null
+      one_deselect_action: nullify
+      one_field: null
+      sort_field: null
+    schema:
+      table: featured_stories
+      column: additional_story_one
+      foreign_key_table: stories
+      foreign_key_column: id
+      constraint_name: featured_stories_additional_story_one_foreign
+      on_update: NO ACTION
+      on_delete: SET NULL
+  - collection: featured_stories
+    field: additional_story_two
+    related_collection: stories
+    meta:
+      junction_field: null
+      many_collection: featured_stories
+      many_field: additional_story_two
+      one_allowed_collections: null
+      one_collection: stories
+      one_collection_field: null
+      one_deselect_action: nullify
+      one_field: null
+      sort_field: null
+    schema:
+      table: featured_stories
+      column: additional_story_two
+      foreign_key_table: stories
+      foreign_key_column: id
+      constraint_name: featured_stories_additional_story_two_foreign
+      on_update: NO ACTION
+      on_delete: SET NULL
+  - collection: featured_stories
+    field: additional_story_three
+    related_collection: stories
+    meta:
+      junction_field: null
+      many_collection: featured_stories
+      many_field: additional_story_three
+      one_allowed_collections: null
+      one_collection: stories
+      one_collection_field: null
+      one_deselect_action: nullify
+      one_field: null
+      sort_field: null
+    schema:
+      table: featured_stories
+      column: additional_story_three
+      foreign_key_table: stories
+      foreign_key_column: id
+      constraint_name: featured_stories_additional_story_three_foreign
+      on_update: NO ACTION
+      on_delete: SET NULL
+  - collection: featured_stories
+    field: additional_story_four
+    related_collection: stories
+    meta:
+      junction_field: null
+      many_collection: featured_stories
+      many_field: additional_story_four
+      one_allowed_collections: null
+      one_collection: stories
+      one_collection_field: null
+      one_deselect_action: nullify
+      one_field: null
+      sort_field: null
+    schema:
+      table: featured_stories
+      column: additional_story_four
+      foreign_key_table: stories
+      foreign_key_column: id
+      constraint_name: featured_stories_additional_story_four_foreign
+      on_update: NO ACTION
+      on_delete: SET NULL
+  - collection: featured_stories
+    field: additional_story_five
+    related_collection: stories
+    meta:
+      junction_field: null
+      many_collection: featured_stories
+      many_field: additional_story_five
+      one_allowed_collections: null
+      one_collection: stories
+      one_collection_field: null
+      one_deselect_action: nullify
+      one_field: null
+      sort_field: null
+    schema:
+      table: featured_stories
+      column: additional_story_five
+      foreign_key_table: stories
+      foreign_key_column: id
+      constraint_name: featured_stories_additional_story_five_foreign
+      on_update: NO ACTION
+      on_delete: SET NULL
+  - collection: featured_stories
+    field: additional_story_six
+    related_collection: stories
+    meta:
+      junction_field: null
+      many_collection: featured_stories
+      many_field: additional_story_six
+      one_allowed_collections: null
+      one_collection: stories
+      one_collection_field: null
+      one_deselect_action: nullify
+      one_field: null
+      sort_field: null
+    schema:
+      table: featured_stories
+      column: additional_story_six
+      foreign_key_table: stories
+      foreign_key_column: id
+      constraint_name: featured_stories_additional_story_six_foreign
+      on_update: NO ACTION
+      on_delete: SET NULL
+  - collection: live_blog_entries
+    field: live_blog
+    related_collection: live_blogs
+    meta:
+      junction_field: null
+      many_collection: live_blog_entries
+      many_field: live_blog
+      one_allowed_collections: null
+      one_collection: live_blogs
+      one_collection_field: null
+      one_deselect_action: nullify
+      one_field: null
+      sort_field: null
+    schema:
+      table: live_blog_entries
+      column: live_blog
+      foreign_key_table: live_blogs
+      foreign_key_column: id
+      constraint_name: live_blog_entries_live_blog_foreign
+      on_update: NO ACTION
+      on_delete: SET NULL
+  - collection: live_blogs
+    field: pinned_entry
+    related_collection: live_blog_entries
+    meta:
+      junction_field: null
+      many_collection: live_blogs
+      many_field: pinned_entry
+      one_allowed_collections: null
+      one_collection: live_blog_entries
+      one_collection_field: null
+      one_deselect_action: nullify
+      one_field: null
+      sort_field: null
+    schema:
+      table: live_blogs
+      column: pinned_entry
+      foreign_key_table: live_blog_entries
+      foreign_key_column: id
+      constraint_name: live_blogs_pinned_entry_foreign
+      on_update: NO ACTION
+      on_delete: SET NULL
+  - collection: stories
+    field: header_media
+    related_collection: directus_files
+    meta:
+      junction_field: null
+      many_collection: stories
+      many_field: header_media
+      one_allowed_collections: null
+      one_collection: directus_files
+      one_collection_field: null
+      one_deselect_action: nullify
+      one_field: null
+      sort_field: null
+    schema:
+      table: stories
+      column: header_media
+      foreign_key_table: directus_files
+      foreign_key_column: id
+      constraint_name: stories_header_media_foreign
+      on_update: NO ACTION
+      on_delete: SET NULL
+  - collection: stories
+    field: live_blog
+    related_collection: live_blogs
+    meta:
+      junction_field: null
+      many_collection: stories
+      many_field: live_blog
+      one_allowed_collections: null
+      one_collection: live_blogs
+      one_collection_field: null
+      one_deselect_action: nullify
+      one_field: null
+      sort_field: null
+    schema:
+      table: stories
+      column: live_blog
+      foreign_key_table: live_blogs
+      foreign_key_column: id
+      constraint_name: stories_live_blog_foreign
+      on_update: NO ACTION
+      on_delete: SET NULL
+  - collection: stories_categories
+    field: categories_id
+    related_collection: categories
+    meta:
+      junction_field: stories_id
+      many_collection: stories_categories
+      many_field: categories_id
+      one_allowed_collections: null
+      one_collection: categories
+      one_collection_field: null
+      one_deselect_action: nullify
+      one_field: null
+      sort_field: null
+    schema:
+      table: stories_categories
+      column: categories_id
+      foreign_key_table: categories
+      foreign_key_column: id
+      constraint_name: stories_categories_categories_id_foreign
+      on_update: NO ACTION
+      on_delete: SET NULL
+  - collection: stories_categories
+    field: stories_id
+    related_collection: stories
+    meta:
+      junction_field: categories_id
+      many_collection: stories_categories
+      many_field: stories_id
+      one_allowed_collections: null
+      one_collection: stories
+      one_collection_field: null
+      one_deselect_action: nullify
+      one_field: categories
+      sort_field: null
+    schema:
+      table: stories_categories
+      column: stories_id
+      foreign_key_table: stories
+      foreign_key_column: id
+      constraint_name: stories_categories_stories_id_foreign
+      on_update: NO ACTION
+      on_delete: SET NULL
